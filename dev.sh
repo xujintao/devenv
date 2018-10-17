@@ -14,6 +14,9 @@ fi
 echo "禁用fastmirror插件"
 sed -i 's/enabled=1/enabled=0/' /etc/yum/pluginconf.d/fastestmirror.conf
 
+echo "yum安装git"
+yum install -y git
+
 echo "yum安装net-tools（centos7.5的box没有net-bools）"
 yum install -y net-tools
 
