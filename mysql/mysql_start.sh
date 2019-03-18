@@ -1,5 +1,5 @@
 docker run \
---rm \
+--restart always \
 --name mysql \
 -d \
 -e LANG=C.UTF-8 \
