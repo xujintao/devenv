@@ -1,4 +1,4 @@
-![](https://github.com/xujintao/deven/ss/ss.jpg)
+![](https://github.com/xujintao/deven/blob/master/ss/ss.jpg)
 
 ### 打包ss镜像
 ```sh
@@ -29,6 +29,7 @@ xujintao/ss:2.0 \
 ```
 
 ### 支持的加密种类
+```sh
 AEAD方式
 AEAD_AES_128_GCM
 AEAD_AES_192_GCM
@@ -44,3 +45,4 @@ AES-192-CFB
 AES-256-CFB
 CHACHA20-IETF
 XCHACHA20
+```
