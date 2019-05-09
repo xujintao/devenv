@@ -1,4 +1,4 @@
-export REDIS_HOME=~/redis
+export REDIS_HOME=~/volumes/redis
 
 docker run \
 --rm \
