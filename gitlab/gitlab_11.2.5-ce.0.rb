@@ -10,7 +10,7 @@
 ##! URL on which GitLab will be reachable.
 ##! For more details on configuring external_url see:
 ##! https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
-external_url 'http://10.51.13.36'
+external_url 'http://gitlab.pi.com'
 
 ## Roles for multi-instance GitLab
 ##! The default is to have no roles enabled, which results in GitLab running as an all-in-one instance.
@@ -46,7 +46,7 @@ external_url 'http://10.51.13.36'
 ##! Docs: https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/gitlab.yml.md
 ################################################################################
 # gitlab_rails['gitlab_ssh_host'] = 'ssh.host_example.com'
-# gitlab_rails['time_zone'] = 'UTC'
+gitlab_rails['time_zone'] = 'Asia/Shanghai'
 
 ### Email Settings
 gitlab_rails['gitlab_email_enabled'] = true
@@ -473,7 +473,7 @@ gitlab_rails['smtp_enable'] = true
 gitlab_rails['smtp_address'] = "smtp.163.com"
 gitlab_rails['smtp_port'] = 25
 gitlab_rails['smtp_user_name'] = "ddwant"
-gitlab_rails['smtp_password'] = "*********"
+gitlab_rails['smtp_password'] = "******"
 gitlab_rails['smtp_domain'] = "163.com"
 gitlab_rails['smtp_authentication'] = "login"
 gitlab_rails['smtp_enable_starttls_auto'] = true
