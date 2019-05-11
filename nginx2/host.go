@@ -18,9 +18,9 @@ func main() {
 
 		// log
 		fmt.Fprintf(os.Stdout,
-			"%s - - [%s] \"%s %s HTTP/%d.%d\" host[%s] %d %s \"%s\" \"%s\"\n",
+			"%s - - [%s] \"%s %s HTTP/%d.%d\" host[%s] %d %s \"%s\" \"%s\" \"%s\" \"%s\"\n",
 			r.RemoteAddr, time.Now().Format(time.RFC1123Z), r.Method, r.RequestURI, r.ProtoMajor, r.ProtoMinor, r.Host,
-			302, w.Header().Get("Content-Length"), r.Referer(), r.UserAgent())
+			302, w.Header().Get("Content-Length"), r.Referer(), r.UserAgent(), r.Header.Get("X-Forwarded-For"), r.Header.Get("x-Real-IP"))
 	})
 
 	// root
@@ -32,9 +32,9 @@ func main() {
 		}
 		// log
 		fmt.Fprintf(os.Stdout,
-			"%s - - [%s] \"%s %s HTTP/%d.%d\" host[%s] %d %d \"%s\" \"%s\"\n",
+			"%s - - [%s] \"%s %s HTTP/%d.%d\" host[%s] %d %d \"%s\" \"%s\" \"%s\" \"%s\"\n",
 			r.RemoteAddr, time.Now().Format(time.RFC1123Z), r.Method, r.RequestURI, r.ProtoMajor, r.ProtoMinor, r.Host,
-			200, n, r.Referer(), r.UserAgent())
+			200, n, r.Referer(), r.UserAgent(), r.Header.Get("X-Forwarded-For"), r.Header.Get("x-Real-IP"))
 	})
 
 	if err := http.ListenAndServe(":81", nil); err != nil {
