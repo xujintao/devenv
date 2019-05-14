@@ -30,7 +30,9 @@ rm -rf 1.key
 2, 创建证书签名请求
 ```
 openssl req -new -key pi.com.key -out pi.com.csr
-# 域名填写*.pi.com
+# 域名填写*.pi.com，会报错curl: (51) SSL: certificate subject name '*.pi.com' does not match target host name 'pi.com'
+# 域名填写pi.com，会报错curl: (51) SSL: certificate subject name 'pi.com' does not match target host name 'www.pi.com'
+# 需要多域名
 ```
 
 3, 创建证书
