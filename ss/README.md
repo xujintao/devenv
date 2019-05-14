@@ -12,6 +12,7 @@ docker run \
 -d \
 --name ss \
 -p 8118:8118 \
+-p 1080:1080 \
 xujintao/ss:2.0 \
 -s ss://cipher:password@serverIP:Port
 ```
@@ -23,6 +24,7 @@ docker run \
 -d \
 --name ss \
 -p 8118:8118 \
+-p 1080:1080 \
 xujintao/ss:2.0 \
 -s ss://cipher:password@127.0.0.1:1984 \
 -o "-s serverIP -p Port -l 1984 --obfs tls --obfs-host www.s4.com"
