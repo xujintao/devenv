@@ -5,12 +5,7 @@ mkdir -p ~/ssl/nginx && cd ~/ssl/nginx
 ### 创建证书
 1, 创建private key
 ```
-openssl genrsa -des3 -out pi.com.key 2048
-# 记住密码
-mv pi.com.key 1.key
-openssl rsa -in 1.key -out pi.com.key
-rm -rf 1.key
-# 忘记密码
+openssl genrsa -out pi.com.key 2048
 ```
 
 2, 创建证书签名请求
