@@ -44,3 +44,10 @@ docker restart nginx
 sudo cp pi.com.crt /usr/local/share/ca-certificates
 sudo update-ca-certificates -f
 ```
+
+### 测试
+```sh
+curl -v https://pi.com
+报错curl: (60) SSL certificate problem: unable to get local issuer certificate
+但是单域名自签名证书却能正常工作
+```
