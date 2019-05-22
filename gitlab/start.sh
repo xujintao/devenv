@@ -5,8 +5,7 @@ docker run \
 -d \
 --name gitlab \
 -h gitlab \
--p 8443:443 \
--p 8080:80 \
+-p 8081:80 \
 -p 2222:22 \
 -v $GITLAB_HOME/config:/etc/gitlab \
 -v $GITLAB_HOME/logs:/var/log/gitlab \

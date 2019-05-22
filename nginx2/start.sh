@@ -7,5 +7,5 @@ docker run \
 -e LANG=C.UTF-8 \
 -e TZ=Asia/Shanghai \
 -v $NGINX_HOME:/etc/nginx \
--p 81:80 \
+-p 8080:80 \
 nginx:1.15.5-alpine
