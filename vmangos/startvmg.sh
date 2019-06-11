@@ -1,4 +1,4 @@
-VMANGOS_HOME=~/volumes/vmangos
+VMANGOS_HOME=~/volumes/vmangos/etc
 
 docker run \
 --rm \

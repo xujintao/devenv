@@ -1,15 +1,15 @@
-MYSQL_HOME=~/volumes/mysql2/data
-VMANGOS_HOME=~/volumes/mysql2/vmangos
+MYSQL_HOME=~/volumes/vmangos/mysql
+SQL_HOME=~/volumes/vmangos/sql
 
 docker run \
 --rm \
 -d \
---name mysql2 \
+--name vmgdb \
 --network mynet \
---network-alias mysql2 \
+--network-alias vmgdb \
 -e LANG=C.UTF-8 \
 -e TZ=Asia/Shanghai \
 -e MYSQL_ROOT_PASSWORD=1234 \
 -v $MYSQL_HOME:/var/lib/mysql \
--v $VMANGOS_HOME:/vmangos \
+-v $SQL_HOME:/vmangos \
 mysql:5.7
