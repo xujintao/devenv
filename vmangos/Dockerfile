@@ -15,7 +15,7 @@ RUN apt update && \
     make -j4 && make install && \
     rm -rf /var/lib/apt/lists/*
 
-FROM ubuntu:xenial
+FROM ubuntu:xenial as mangos
 LABEL maintainer "xujintao@126.com"
 
 RUN apt update && \
@@ -23,6 +23,18 @@ RUN apt update && \
                 vim && \
     rm -rf /var/lib/apt/lists/*
 
-COPY --from=builder /vmangos/bin /vmangos/bin
-COPY --from=builder /vmangos/etc /vmangos/etc
+COPY --from=builder /vmangos/bin/mangosd /vmangos/bin/
+COPY --from=builder /vmangos/etc/mangosd.conf* /vmangos/etc/
+CMD ["/bin/bash"]
+
+FROM ubuntu:xenial as realm
+LABEL maintainer "xujintao@126.com"
+
+RUN apt update && \
+    apt install -y libace-6.3.3 libtbb2 libmysqlclient20 openssl libssl1.0.0 \
+                vim && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /vmangos/bin/realmd /vmangos/bin/
+COPY --from=builder /vmangos/etc/realmd.conf* /vmangos/etc/
 CMD ["/bin/bash"]

@@ -1,6 +1,11 @@
 ### compile
 https://github.com/vmangos/wiki/wiki/Compiling-on-Ubuntu
 
+```
+docker build -t xujintao/mangos:1.12.1 --target mangos .
+docker build -t xujintao/realm:1.12.1 --target realm .
+```
+
 ### get it work
 https://github.com/vmangos/wiki/wiki/Getting-it-working
 
