@@ -9,12 +9,13 @@ docker build -t xujintao/realm:1.12.1 --target realm .
 ### get it work
 https://github.com/vmangos/wiki/wiki/Getting-it-working
 
+##### sql
 ```
 # copy sql
 cd ~/volumes/vmangos/sql
 sudo cp ~/github.com/xujintao/devenv/vmangos/sql/create.sql .
 sudo cp -r ~/github.com/vmangos/core/sql .
-sudo cp ~/github.com/brotalnia/database/world_full_08_february_2019.sql sql
+sudo cp ~/github.com/brotalnia/database/world_full_08_february_2019.sql sql/
 
 # create databases
 mysql -uroot -p < create.sql
@@ -31,3 +32,8 @@ cd migrations
 bash merge.sh
 mysql -uroot -p mangos < world_db_updates.sql
 ```
+
+##### data
+
+
+##### etc
