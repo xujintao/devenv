@@ -31,9 +31,12 @@ mysql -uroot -p mangos < world_full_08_february_2019.sql
 cd migrations
 bash merge.sh
 mysql -uroot -p mangos < world_db_updates.sql
+
+# init realmd.realmlist
+mysql -uroot -p realmd -e 'insert into realmlist (name, address) values("Classic Bate", "192.168.0.101")';
 ```
 
 ##### data
-
+http://www.ac-web.org/forums/showthread.php?230227-Light-s-Hope-Vanilla-Repack
 
 ##### etc
