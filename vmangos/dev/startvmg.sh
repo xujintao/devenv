@@ -11,5 +11,6 @@ docker run \
 -v $DATA_HOME:/vmangos/data \
 -v $COREDUMP_HOME:/coredump \
 -p 8085:8085 \
+--security-opt seccomp=unconfined \
 xujintao/vmangos:1.12.1 \
 /bin/bash
