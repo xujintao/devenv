@@ -7,8 +7,8 @@ echo '/coredump/core.%e.%p.%t' | sudo tee /proc/sys/kernel/core_pattern
 ```
 
 ```
-docker build -t xujintao/mangos:1.12.1 --target mangos . && \
-docker build -t xujintao/realm:1.12.1 --target realm .
+docker build -t xujintao/mangosd:1.12.1 --target mangosd . && \
+docker build -t xujintao/realmd:1.12.1 --target realmd .
 ```
 
 ### get it work

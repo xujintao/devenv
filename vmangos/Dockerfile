@@ -15,7 +15,7 @@ RUN apt update && \
     make -j4 && make install && \
     rm -rf /var/lib/apt/lists/*
 
-FROM ubuntu:xenial as mangos
+FROM ubuntu:xenial as mangosd
 LABEL maintainer "xujintao@126.com"
 
 RUN apt update && \
@@ -27,7 +27,7 @@ COPY --from=builder /vmangos/bin/mangosd /vmangos/bin/
 COPY --from=builder /vmangos/etc/mangosd.conf* /vmangos/etc/
 ENTRYPOINT ["/vmangos/bin/mangosd", "-s", "run"]
 
-FROM ubuntu:xenial as realm
+FROM ubuntu:xenial as realmd
 LABEL maintainer "xujintao@126.com"
 
 RUN apt update && \
