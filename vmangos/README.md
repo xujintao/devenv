@@ -49,6 +49,7 @@ db and dir
 
 ##### start
 ```
+docker network create mynet
 ./startdb.sh
 ./startrealm.sh
 ./startmg.sh
