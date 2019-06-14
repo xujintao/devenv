@@ -25,7 +25,7 @@ RUN apt update && \
 
 COPY --from=builder /vmangos/bin/mangosd /vmangos/bin/
 COPY --from=builder /vmangos/etc/mangosd.conf* /vmangos/etc/
-ENTRYPOINT ["/vmangos/bin/mangosd"]
+ENTRYPOINT ["/vmangos/bin/mangosd", "-s", "run"]
 
 FROM ubuntu:xenial as realm
 LABEL maintainer "xujintao@126.com"
@@ -37,4 +37,4 @@ RUN apt update && \
 
 COPY --from=builder /vmangos/bin/realmd /vmangos/bin/
 COPY --from=builder /vmangos/etc/realmd.conf* /vmangos/etc/
-ENTRYPOINT ["/vmangos/bin/realmd"]
+ENTRYPOINT ["/vmangos/bin/realmd", "-s", "run"]
