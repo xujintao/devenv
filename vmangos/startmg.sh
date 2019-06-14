@@ -2,7 +2,7 @@ VMANGOS_HOME=~/volumes/vmangos/etc
 DATA_HOME=~/volumes/vmangos/data
 
 docker run \
---rm \
+--restart always \
 -it \
 --name mangos \
 --network mynet \
