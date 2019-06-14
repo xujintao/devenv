@@ -2,7 +2,12 @@
 https://github.com/vmangos/wiki/wiki/Compiling-on-Ubuntu
 
 ```
-docker build -t xujintao/mangos:1.12.1 --target mangos .
+# host config coredump
+echo '/coredump/core.%e.%p.%t' | sudo tee /proc/sys/kernel/core_pattern
+```
+
+```
+docker build -t xujintao/mangos:1.12.1 --target mangos . && \
 docker build -t xujintao/realm:1.12.1 --target realm .
 ```
 
@@ -40,3 +45,20 @@ mysql -uroot -p realmd -e 'insert into realmlist (name, address) values("Classic
 http://www.ac-web.org/forums/showthread.php?230227-Light-s-Hope-Vanilla-Repack
 
 ##### etc
+db and dir
+
+##### start
+```
+./startdb.sh
+./startrealm.sh
+./startmg.sh
+```
+
+### attach console
+```
+# entry
+docker attach mangos
+
+# exit
+ctrl + p, ctrl + q
+```
