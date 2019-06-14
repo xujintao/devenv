@@ -3,7 +3,7 @@ DATA_HOME=~/volumes/vmangos/data
 COREDUMP_HOME=~/volumes/vmangos/coredump
 
 docker run \
---rm \
+--restart always \
 -it \
 --name mangos \
 --network mynet \

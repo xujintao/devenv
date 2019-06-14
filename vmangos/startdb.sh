@@ -2,7 +2,7 @@ MYSQL_HOME=~/volumes/vmangos/mysql
 SQL_HOME=~/volumes/vmangos/sql
 
 docker run \
---rm \
+--restart always \
 -d \
 --name vmgdb \
 --network mynet \
