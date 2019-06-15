@@ -11,5 +11,4 @@ docker run \
 -v $DATA_HOME:/vmangos/data \
 -v $COREDUMP_HOME:/coredump \
 -p 8085:8085 \
-xujintao/mangosd:1.12.1 \
-/bin/bash
+xujintao/mangosd:1.12.1
