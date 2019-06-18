@@ -9,7 +9,7 @@ docker run \
 --network mynet \
 -v $VMANGOS_HOME:/vmangos/etc \
 -v $DATA_HOME:/vmangos/data \
--v $COREDUMP_HOME:/coredump \
+-v $COREDUMP_HOME:/tmp \
 -p 8085:8085 \
 --security-opt seccomp=unconfined \
 xujintao/vmangos:1.12.1 \
