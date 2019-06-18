@@ -3,7 +3,7 @@ https://github.com/vmangos/wiki/wiki/Compiling-on-Ubuntu
 
 ```
 # host config coredump
-echo '/coredump/core.%e.%p.%t' | sudo tee /proc/sys/kernel/core_pattern
+echo '/tmp/core.%e.%p.%t' | sudo tee /proc/sys/kernel/core_pattern
 ```
 
 ```
