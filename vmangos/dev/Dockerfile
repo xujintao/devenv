@@ -1,6 +1,7 @@
 FROM ubuntu:xenial
 LABEL maintainer "xujintao@126.com"
-RUN apt update && \
+RUN set -ex && \
+    apt update && \
     apt install -y g++ libace-dev libtbb-dev git cmake \
                 libmysqlclient-dev openssl libssl-dev \
                 build-essential checkinstall zlib1g-dev \
