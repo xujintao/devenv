@@ -7,8 +7,13 @@ echo '/coredump/core.%e.%p.%t' | sudo tee /proc/sys/kernel/core_pattern
 ```
 
 ```
+# ubuntu base
 docker build -t xujintao/mangosd:1.12.1 --target mangosd . && \
 docker build -t xujintao/realmd:1.12.1 --target realmd .
+
+# stretch-slim base
+docker build -t xujintao/mangosd:1.12.1-slim --target mangosd . && \
+docker build -t xujintao/realmd:1.12.1-slim --target realmd .
 ```
 
 ### get it work
