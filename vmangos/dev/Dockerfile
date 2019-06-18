@@ -9,7 +9,8 @@ RUN set -ex && \
     export ACE_ROOT=/usr/include/ace && \
     export TBB_ROOT_DIR=/usr/include/tbb && \
     git clone -b development https://github.com/vmangos/core.git /vmangos/core && \
-    mkdir /vmangos/build && cd $_ && \
+    mkdir -p /vmangos/log; \
+    mkdir -p /vmangos/build && cd $_ && \
     cmake /vmangos/core \
     -DDEBUG=1 \
     -DSUPPORTED_CLIENT_BUILD=5875 \

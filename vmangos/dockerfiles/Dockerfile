@@ -21,7 +21,7 @@ RUN set -ex; \
     export ACE_ROOT=/usr/include/ace; \
     export TBB_ROOT_DIR=/usr/include/tbb; \
     git clone -b development https://github.com/vmangos/core.git /vmangos/core; \
-    mkdir /vmangos/build && cd $_; \
+    mkdir -p /vmangos/build && cd $_; \
     cmake /vmangos/core \
     -DDEBUG=0 \
     -DSUPPORTED_CLIENT_BUILD=5875 \
@@ -47,7 +47,7 @@ RUN set -ex; \
     apt install -y --no-install-recommends $fetchDeps; \
     rm -rf /var/lib/apt/lists/*; \
     \
-    mkdir /vmangos/log
+    mkdir -p /vmangos/log
 
 COPY --from=builder /vmangos/bin/mangosd /vmangos/bin/
 COPY --from=builder /vmangos/etc/mangosd.conf* /vmangos/etc/
@@ -71,7 +71,7 @@ RUN set -ex; \
     apt install -y --no-install-recommends $fetchDeps; \
     rm -rf /var/lib/apt/lists/*; \
     \
-    mkdir /vmangos/log
+    mkdir -p /vmangos/log
 
 COPY --from=builder /vmangos/bin/realmd /vmangos/bin/
 COPY --from=builder /vmangos/etc/realmd.conf* /vmangos/etc/
