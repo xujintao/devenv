@@ -15,7 +15,7 @@ RUN set -ex; \
         zlib1g-dev \
     "; \
     apt update; \
-    apt install -y --no-install-recommends $fetchDeps; \
+    apt install -y $fetchDeps; \
     rm -rf /var/lib/apt/lists/*; \
     \
     export ACE_ROOT=/usr/include/ace; \
