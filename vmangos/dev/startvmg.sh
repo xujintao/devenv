@@ -7,6 +7,7 @@ docker run \
 -it \
 --name vmangos \
 --network mynet \
+-e TZ=Asia/Shanghai \
 -v $VMANGOS_HOME:/vmangos/etc \
 -v $DATA_HOME:/vmangos/data \
 -v $COREDUMP_HOME:/tmp \
