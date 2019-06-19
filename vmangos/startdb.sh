@@ -4,6 +4,7 @@ SQL_HOME=~/volumes/vmangos/sql
 docker run \
 --restart always \
 -d \
+-h vmgdb \
 --name vmgdb \
 --network mynet \
 --network-alias vmgdb \

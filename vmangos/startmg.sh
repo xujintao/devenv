@@ -5,6 +5,7 @@ COREDUMP_HOME=~/volumes/vmangos/coredump
 docker run \
 --restart always \
 -d \
+-h mangosd \
 --name mangosd \
 --network mynet \
 -e TZ=Asia/Shanghai \

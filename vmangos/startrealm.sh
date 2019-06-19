@@ -3,6 +3,7 @@ VMANGOS_HOME=~/volumes/vmangos/etc
 docker run \
 --restart always \
 -d \
+-h realmd \
 --name realmd \
 --network mynet \
 -v $VMANGOS_HOME:/vmangos/etc \
