@@ -11,6 +11,7 @@ docker run \
 -v $VMANGOS_HOME:/vmangos/etc \
 -v $DATA_HOME:/vmangos/data \
 -v $COREDUMP_HOME:/tmp \
+-p 3724:3724 \
 -p 8085:8085 \
 --security-opt seccomp=unconfined \
 xujintao/vmangos:1.12.1 \
