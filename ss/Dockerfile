@@ -2,7 +2,6 @@ FROM golang:1.11.5-alpine3.8 as builder
 
 RUN apk update && \
     apk add git && \
-    git config --global http.postBuffer 524288000 && \
     git clone https://github.com/xujintao/go-shadowsocks2.git \
      $GOPATH/src/github.com/shadowsocks/go-shadowsocks2 && \
     go install github.com/shadowsocks/go-shadowsocks2 && \
