@@ -2,9 +2,10 @@ FROM golang:1.11.5-alpine3.8 as builder
 
 RUN apk update && \
     apk add git && \
-   git clone https://github.com/xujintao/go-shadowsocks2.git \
+    git config --global http.postBuffer 524288000 && \
+    git clone https://github.com/xujintao/go-shadowsocks2.git \
      $GOPATH/src/github.com/shadowsocks/go-shadowsocks2 && \
-   go install github.com/shadowsocks/go-shadowsocks2 && \
+    go install github.com/shadowsocks/go-shadowsocks2 && \
 
     apk add gcc autoconf make libtool automake zlib-dev \
             openssl asciidoc xmlto libpcre32 libev-dev \
@@ -46,7 +47,7 @@ sed -i '/^l.*127/ s/127.0.0.1/0.0.0.0/g' /etc/privoxy/config && \
       /etc/privoxy/config
 
 COPY --from=builder /go/bin/go-shadowsocks2 /usr/local/bin/shadowsocks2
-COPY --from=builder /usr/local/bin/obfs-local /usr/local/bin/
+COPY --from=builder /usr/local/bin/obfs-* /usr/local/bin/
 
 ADD entrypoint.sh /entrypoint.sh
 

@@ -1,11 +1,11 @@
 ![](https://github.com/xujintao/deven/blob/master/ss/ss.jpg)
 
-### 打包ss镜像
+## build
 ```sh
-docker build -t xujintao/ss:2.0 .
+docker build -t xujintao/ss:2.1 .
 ```
-
-### 无obfs
+## client
+without obfs
 ```sh
 docker run \
 --restart=always \
@@ -14,10 +14,10 @@ docker run \
 -p 8118:8118 \
 -p 1080:1080 \
 xujintao/ss:2.0 \
--s ss://cipher:password@serverIP:Port
+-c ss://cipher:password@serverIP:Port
 ```
 
-### 有obfs
+with obfs
 ```sh
 docker run \
 --restart=always \
@@ -26,11 +26,25 @@ docker run \
 -p 8118:8118 \
 -p 1080:1080 \
 xujintao/ss:2.0 \
--s ss://cipher:password@127.0.0.1:1984 \
+-c ss://cipher:password@127.0.0.1:1984 \
 -o "-s serverIP -p Port -l 1984 --obfs tls --obfs-host www.s4.com"
 ```
 
-### 支持的加密种类
+## server
+[configure multiple users](https://github.com/shadowsocks/go-shadowsocks2/issues/111)
+
+```sh
+docker run \
+--restart=always \
+-d \
+--name ss \
+-p 8118:8118 \
+-p 1080:1080 \
+xujintao/ss:2.1 \
+-s ss://cipher:password@:Port
+```
+
+## 支持的加密种类
 ```sh
 AEAD方式
 AEAD_AES_128_GCM
