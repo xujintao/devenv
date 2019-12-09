@@ -1,0 +1,13 @@
+export SEAFILE_HOME=~/seafile
+# timezone not fixed in latest image
+
+docker run \
+--restart always \
+-it \
+--name seafile \
+-e SEAFILE_SERVER_HOSTNAME=seafile.pi.com \
+-e SEAFILE_ADMIN_EMAIL=admin \
+-e SEAFILE_ADMIN_PASSWORD=admin \
+-v $SEAFILE_HOME:/shared \
+-p 8082:80 \
+seafileltd/seafile:6.3.4
